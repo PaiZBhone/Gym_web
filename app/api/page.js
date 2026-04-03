@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "@/components/navBar";
 import AdminTable from "@/components/adminTable";
 import { mysqlPool } from "@/utils/db";
-
+//me
 export default async function AdminPage() {
   const [exercises] = await mysqlPool.promise().query(`
     SELECT 
