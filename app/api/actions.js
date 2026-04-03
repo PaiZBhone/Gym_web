@@ -1,5 +1,5 @@
 "use server";
-//me
+//update add delete exercises, update instructions, and modify program junction links
 import { mysqlPool } from "@/utils/db";
 import { revalidatePath } from "next/cache";
 
