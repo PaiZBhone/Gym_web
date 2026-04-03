@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import { Trash2, Edit, Plus } from "lucide-react";
 import { deleteExercise } from "@/app/api/actions";
 import AddExerciseForm from "./addExerciseForm";
-import EditExerciseForm from "./editExerciseForm"; // <-- Import the new form!
+import EditExerciseForm from "./editExerciseForm";
 
 export default function AdminTable({ exercises }) {
   const [isDeleting, setIsDeleting] = useState(false);
   
   // State to track which view to show
   const [showAddForm, setShowAddForm] = useState(false);
-  const [editingExerciseId, setEditingExerciseId] = useState(null); // <-- Tracks which ID to edit
+  const [editingExerciseId, setEditingExerciseId] = useState(null);
 
   const handleDelete = async (id, name) => {
     if (!window.confirm(`Are you sure you want to delete ${name}? This will remove it from all programs.`)) return;
@@ -50,7 +50,6 @@ export default function AdminTable({ exercises }) {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-surface-container border-b border-outline-variant text-on-surface-variant text-xs uppercase tracking-widest font-label">
-              <th className="p-4">ID</th>
               <th className="p-4">Exercise Name</th>
               <th className="p-4">Active Programs (Day)</th>
               <th className="p-4 text-right">Actions</th>
@@ -59,14 +58,13 @@ export default function AdminTable({ exercises }) {
           <tbody className="divide-y divide-outline-variant">
             {exercises.map((ex) => (
               <tr key={ex.id} className="hover:bg-surface-container/50 transition-colors">
-                <td className="p-4 text-on-surface-variant">{ex.id}</td>
                 <td className="p-4 font-bold text-on-surface">{ex.name}</td>
                 <td className="p-4 text-sm text-primary">
                   {ex.associated_programs ? ex.associated_programs : <span className="text-on-surface-variant/50 italic">None</span>}
                 </td>
                 <td className="p-4 flex justify-end gap-3">
                   
-                  {/* EDIT BUTTON IS NOW WIRED UP! */}
+                  {/* EDIT BUTTON */}
                   <button 
                     onClick={() => setEditingExerciseId(ex.id)}
                     className="text-on-surface-variant hover:text-white transition-colors"

@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 export async function deleteExercise(exerciseId) {
   try {
     await mysqlPool.promise().query("DELETE FROM exercises WHERE id = ?", [exerciseId]);
-    revalidatePath("/exerciselist");
+    revalidatePath("/api");
     return { success: true };
   } catch (error) {
     console.error("Failed to delete exercise:", error);
@@ -34,7 +34,7 @@ export async function addExercise(exerciseData, assignedPrograms) {
       }
     }
 
-    revalidatePath("/exerciselist"); 
+    revalidatePath("/api"); 
     return { success: true };
   } catch (error) {
     console.error("Failed to add exercise:", error);
