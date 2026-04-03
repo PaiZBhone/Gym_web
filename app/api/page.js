@@ -2,8 +2,8 @@ import React from "react";
 import NavBar from "@/components/navBar";
 import AdminTable from "@/components/adminTable";
 import { mysqlPool } from "@/utils/db";
-import styles from "./page.css";
-//when i enter api, we will see page of system admin, with table of exercises and their associated programs. From there, we can click edit to edit the exercise info, and add or remove program links. We can also add new exercises, and delete exercises.
+import "./page.css";
+//when i enter to /api, we will see page of system admin, with table of exercises and their associated programs. From there, we can click edit to edit the exercise info, and add or remove program links. We can also add new exercises, and delete exercises.
 export default async function AdminPage() {
   const [exercises] = await mysqlPool.promise().query(`
     SELECT 
@@ -18,17 +18,17 @@ export default async function AdminPage() {
   `);
 
   return (
-    <div className={styles.pageWrapper}>
+    <div className="pageWrapper">
       <NavBar />
-      <main className={styles.main}>
-        <div className={styles.header}>
-          <span className={styles.devBadge}>
+      <main className="main">
+        <div className="header">
+          <span className="devBadge">
             Developer Access
           </span>
-          <h1 className={styles.title}>
+          <h1 className="title">
             System Admin
           </h1>
-          <p className={styles.subtitle}>
+          <p className="subtitle">
             Manage exercises, update instructions, and modify program junction links.
           </p>
         </div>

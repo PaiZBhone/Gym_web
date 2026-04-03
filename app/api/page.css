@@ -7,32 +7,32 @@
 }
 
 .main {
-  max-width: 80rem; /* 7xl */
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 8rem 2rem 4rem; /* pt-32 pb-16 px-8 */
+  padding: 8rem 2rem 4rem;
 }
 
 .header {
-  margin-bottom: 3rem; /* mb-12 */
+  margin-bottom: 3rem; 
 }
 
 .devBadge {
   font-size: 12px;
-  color: #f87171; /* red-400 */
+  color: #f87171;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em; /* tracking-widest */
+  letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .title {
   font-family: var(--font-headline);
-  font-size: 3rem; /* text-5xl */
+  font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.05em; /* tracking-tighter */
+  letter-spacing: -0.05em; 
   margin-bottom: 1rem;
   color: #ffffff;
 }
